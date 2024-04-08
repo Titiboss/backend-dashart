@@ -1,0 +1,52 @@
+[
+    {
+        "titre": "La Joconde",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_natural_color.jpg/390px-Mona_Lisa%2C_by_Leonardo_da_Vinci%2C_from_C2RMF_natural_color.jpg",
+        "type": "peinture"
+    },
+    {
+        "titre": "Sainte Anne, la Vierge et l'Enfant Jésus jouant avec un agneau",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/L%C3%A9onard_de_Vinci%2C_sainte_Anne%2C_Louvre.jpg/390px-L%C3%A9onard_de_Vinci%2C_sainte_Anne%2C_Louvre.jpg",
+        "type": "peinture"
+    },
+    {
+        "titre": "La Vierge aux rochers",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg/390px-Leonardo_Da_Vinci_-_Vergine_delle_Rocce_%28Louvre%29.jpg",
+        "type": "peinture"
+    },
+    {
+        "titre": "La Belle Ferronnière",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4d/La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg/390px-La_Belle_Ferroni%C3%A8re_-_Google_Arts.jpg",
+        "type": "peinture"
+    },
+    {
+        "titre": "Bacchus",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Bacchus_%28painting%29.jpg/390px-Bacchus_%28painting%29.jpg",
+        "type": "peinture"
+    },
+    {
+        "titre": "Les Pèlerins d'Emmaüs",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/6/61/Paolo_Veronese_-_Supper_in_Emmaus_-_WGA24854.jpg?uselang=fr",
+        "type": "peinture"
+    },
+    {
+        "titre": "Diana of Versailles",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Diana_of_Versailles.jpg/470px-Diana_of_Versailles.jpg?20230427145410",
+        "type": "sculpture"
+    },
+    {
+        "titre": "Centaure chevauché par l'amour",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Old_Centaur_Eros_Louvre_Ma_562.jpg/594px-Old_Centaur_Eros_Louvre_Ma_562.jpg?20111214152030",
+        "type": "sculpture"
+    },
+    {
+        "titre": "Vénus de Milo",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/V%C3%A9nus_de_Milo_-_Mus%C3%A9e_du_Louvre_AGER_LL_299_%3B_N_527_%3B_Ma_399.jpg/420px-V%C3%A9nus_de_Milo_-_Mus%C3%A9e_du_Louvre_AGER_LL_299_%3B_N_527_%3B_Ma_399.jpg",
+        "type": "sculpture"
+    },
+    {
+        "titre": "Victoire de Samothrace",
+        "lien": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg/420px-Victoire_de_Samothrace_-_Musee_du_Louvre_-_20190812.jpg",
+        "type": "sculpture"
+    }
+]
