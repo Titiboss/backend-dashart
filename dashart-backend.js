@@ -4,6 +4,7 @@ import cors from '@koa/cors';
 import logger from "koa-logger";
 import fs from "fs-extra";
 import bodyParser from "koa-bodyparser";
+import _ from 'lodash';
 
 const app = new Koa();
 const router = new Router();
@@ -45,8 +46,10 @@ router.get("/", (ctx) => {
         'POST <a href="http://localhost:3000/increment-counter-guimet">/save-click-guimet</a>',
         'GET <a href="http://localhost:3000/click-counter-louvres">/click-counter-louvres</a>',
         'GET <a href="http://localhost:3000/click-counter-guimet">/click-counter-guimet</a>',
+        'GET <a href="http://localhost:3000/click-counter-total">/click-counter-total</a>',
         'GET <a href="http://localhost:3000/last-requests-louvres">/last-requests-louvres</a>',
         'GET <a href="http://localhost:3000/last-requests-guimet">/last-requests-guimet</a>',
+        'GET <a href="http://localhost:3000/last-requests-total">/last-requests-total</a>',
 
     ].join("<br>");
 });
@@ -171,6 +174,30 @@ router.get("/click-counter-guimet", async (ctx) => {
     }
 });
 
+router.get("/click-counter-total", async (ctx) => {
+    try {
+        const clickCountsData1 = await fs.readJSON("data/clickCountsGuimet.json");
+        const clickCountsData2 = await fs.readJSON("data/clickCountsLouvres.json");
+        const mergedData = _.merge(clickCountsData1, clickCountsData2);
+        let sortedList = [];
+        for (const oeuvres in mergedData) {
+            // Calculate the number of views (length of timestamps array)
+            const nombresdevue = mergedData[oeuvres].length;
+
+            // Push an object containing art name and number of views to the sorted list
+            sortedList.push({ oeuvres, nombresdevue });
+        }
+
+        // Sort the list based on the number of views in descending order
+        sortedList.sort((a, b) => b.nombresdevue - a.nombresdevue);
+
+        ctx.body = sortedList;
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = { error: "Failed to read clickCountsGuimet.json" };
+    }
+});
+
 router.get("/last-requests-louvres", async (ctx) => {
     try {
         const lastRequestData = await fs.readJSON("data/clickCountsLouvres.json");
@@ -192,7 +219,20 @@ router.get("/last-requests-guimet", async (ctx) => {
         ctx.body = { error: "Failed to read clickCountsGuimet.json" };
     }
 });
-
+router.get("/last-requests-total", async (ctx) => {
+    try {
+        const lastRequestData1 = await fs.readJSON("data/clickCountsLouvres.json");
+        const lastRequestData2 = await fs.readJSON("data/clickCountsGuimet.json");
+        const mergedData = _.merge(lastRequestData1, lastRequestData2);
+        console.log(mergedData);
+        const lastFiveRequests = getLastFiveRequests(mergedData);
+        console.log(mergedData);
+        ctx.body = lastFiveRequests;
+    } catch (error) {
+        ctx.status = 500;
+        ctx.body = { error: "Failed to read clickCountsLouvres.json" };
+    }
+});
 
 app.use(bodyParser());
 app.use(router.routes()).use(router.allowedMethods());
