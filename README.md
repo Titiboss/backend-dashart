@@ -30,7 +30,7 @@
 ## 📁 Structure des données
 
 ```bash
-.
+
 ├── datasets/
 │   ├── ImageLinksLouvres.json       # Liens d’images du Louvre
 │   └── ImageLinksGuimet.json        # Liens d’images du Guimet
